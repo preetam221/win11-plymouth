@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=win11
+Description=A theme that mimics Windows 10 boot splash.
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/win11
+ScriptFile=/usr/share/plymouth/themes/win11/win11.script

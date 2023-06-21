@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ "$PWD" != "/usr/share/plymouth/themes/win11" ] ; then
+sudo rsync -aq --exclude=install-win11 * /usr/share/plymouth/themes/win11/
+clear
+fi
+sudo update-initramfs -u
+echo
+echo "Running 10-second test..."
+sudo plymouthd ; sudo plymouth --show-splash ; for ((I=0; I<10; I++)); do sleep 1 ; sudo plymouth --update=test$I ; done ; sudo plymouth --quit
+exit
